@@ -1,0 +1,220 @@
+:root {
+    --attend-primary: #198754;
+    --attend-secondary: #f5f5f5;
+    --attend-light: #ffffff;
+    --attend-dark: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+input:focus{
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84,0.5) !important;
+}
+select:focus{
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84,0.5) !important;
+}
+.paginate_button a:focus{
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84,0.5) !important;
+}
+.table-container{
+    padding-bottom:30px ;
+    padding-top:30px ;
+}
+
+
+#left-sec {
+    left: 0;
+    top: 0;
+    border-right:2px solid var(--attend-secondary);
+    position: fixed;
+    width: 23% !important;
+    height: 100vh;
+    z-index: 2;
+    background-color: var(--attend-light);
+}
+
+#main-nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    border-bottom: 2px solid var(--attend-secondary);
+    width: 77%;
+    height: 70px;
+    padding-right: 6%;
+    z-index: 10;
+    background-color: var(--attend-light);
+}
+
+#main-nav li {
+    margin-left: 20px;
+}
+
+#photo {
+    display: flex;
+    justify-content: center;
+    margin: 60px 10px 50px 0;
+    overflow: hidden;
+}
+
+#photo>svg {
+    height: 50%;
+    width: 50%;
+}
+
+#options {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-button {
+    width: 85%;
+    padding: 12px 24px;
+    padding-left: 15%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    border: none;
+    transition: all 0.3s;
+    background-color: var(--attend-light);
+    display: flex;
+    justify-content: left;
+}
+
+.main-button>svg {
+    height: 28px;
+    margin-right: 32px;
+    transform: translateY(-12%);
+}
+
+.activebtn {
+    border: 2px solid var(--attend-secondary) !important;
+    background-color: transparent !important;
+}
+
+.main-button:hover {
+    background-color: var(--attend-secondary);
+}
+
+#right-sec{
+    margin-left: 25%;
+    padding: 30px 20px;
+    margin-right: 50px;
+}
+.main-title{
+    font-size: 2rem;
+    font-weight: 600;
+    position: relative;
+    padding-top: 20px;
+    padding-left: 25px;
+    margin-bottom: 30px;
+}
+.main-title::before{
+    content:'';
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    background-color: var(--attend-dark);
+    top:60%;
+    left: 0px;
+    border-radius: 10px;
+}
+#example{
+    margin: 20px 0 !important;
+}
+.paginate_button.active .page-link{
+    background-color: var(--attend-primary) !important;
+    border: 1px solid var(--attend-primary) !important;
+    color: var(--attend-light);
+    
+}
+.paginate_button .page-link {
+    color:var(--attend-primary);
+}  
+#days>button{
+    margin: 5px;
+}
+
+.period{
+    margin: 20px 0px;
+    border: 2px solid var(--attend-secondary);
+    border-radius: 10px;
+}
+.period-no{
+    border-right: 2px solid var(--attend-secondary) !important;
+    padding: 8px 16px;
+}
+.period-info{
+    padding: 8px 16px;
+    padding-top: 20px;
+}
+.period-title{
+    font-size: 2rem;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+.btn-color-change{
+    background-color: var(--attend-primary) !important;
+    color: var(--attend-light) !important;
+    transition: all 0.4s;
+}
+#attendance_search{
+    margin: 31px 0px 0px 30%;
+}
+#period-details{
+    display:none;
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width:1200px){
+    .main-button{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width:992px) {
+    #left-sec{
+        display: none;
+    }
+    #main-nav{
+        display: none;
+    }
+     #right-sec{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .dataTables_length{
+        padding: 10px !important;
+    }
+    .table-container{
+        overflow: auto;
+    }
+    #attendance_search{
+        margin: 20px 0px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    #left-sec{
+        display: none;
+    }
+    #date{
+        margin-bottom: 10px;
+    }
+    
+}
+
+@media screen and (max-width:576px) {
+
+}

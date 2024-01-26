@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+
+    <!--jquery data tables-->
+    <link href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <!--bootstrap 5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../CSS/index.css">
+
+    <!--script-->
+    <script src="../Javascript/teacher.js"></script>
+    <title>Teacher</title>
+</head>
+
+<body>
+    
+    <!--Left Pannel-->
+    <section id="left-sec">
+        <!--photo-->
+        <div id="photo">
+            <svg viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_18_1465)">
+                    <path
+                        d="M97.7177 125.335C114.929 125.335 128.881 111.383 128.881 94.1718C128.881 76.9606 114.929 63.0082 97.7177 63.0082C80.5066 63.0082 66.5542 76.9606 66.5542 94.1718C66.5542 111.383 80.5066 125.335 97.7177 125.335Z"
+                        fill="#FFB6B6" />
+                    <path
+                        d="M79.828 129.944L78.4201 115.712L106.535 110.455L123.136 150.876L94.2641 184.079L73.6926 143.658L79.828 129.944Z"
+                        fill="#FFB6B6" />
+                    <path
+                        d="M77.9684 122.836L84.1149 124.225C84.1149 124.225 79.2831 108.903 80.9231 107.44C82.5632 105.977 86.5821 108.282 86.5821 108.282L90.8054 113.017L95.9496 107.779C95.9496 107.779 101.535 100.835 103.721 98.8844C105.908 96.934 102.396 89.6945 102.396 89.6945C102.396 89.6945 134.838 80.9465 122.766 65.211C122.766 65.211 115.688 52.8738 113.384 56.8927C111.079 60.9116 108.33 54.5288 108.33 54.5288L99.938 56.1247C99.938 56.1247 83.3746 46.3585 67.6541 67.2511C51.9335 88.1438 77.9684 122.836 77.9684 122.836Z"
+                        fill="#2F2E41" />
+                    <path
+                        d="M156.328 170.689C139.297 184.497 118.228 192 96 192C75.7028 192 56.3693 185.742 40.1973 174.143C40.2261 173.839 40.255 173.54 40.2803 173.24C40.7098 168.549 41.0923 163.987 41.3449 160.204C42.323 145.519 76.5834 135.732 76.5834 135.732C76.5834 135.732 76.7386 135.887 77.049 136.158C78.9401 137.818 86.6165 143.838 100.078 145.519C112.082 147.021 116.034 139.9 117.228 136.49C117.589 135.45 117.697 134.754 117.697 134.754L152.936 151.395C155.235 154.679 156.134 161.753 156.31 169.703C156.318 170.032 156.325 170.357 156.328 170.689Z"
+                        fill="#198754" />
+                    <path
+                        d="M163.882 28.1179C145.75 9.98616 121.642 0 96 0C70.3579 0 46.2496 9.98616 28.1179 28.1179C9.98618 46.2496 0 70.3579 0 96C0 119.405 8.31881 141.531 23.5633 159.003C25.0177 160.674 26.5372 162.301 28.1179 163.882C28.4896 164.254 28.865 164.626 29.2439 164.986C30.2544 165.965 31.283 166.921 32.3296 167.848C32.9648 168.415 33.6072 168.971 34.2569 169.516C34.7657 169.945 35.2746 170.368 35.7907 170.783C35.8015 170.793 35.8087 170.801 35.8196 170.808C37.2523 171.963 38.7104 173.074 40.1973 174.143C56.3693 185.742 75.7029 192 96 192C118.228 192 139.297 184.497 156.328 170.689C157.718 169.563 159.079 168.393 160.414 167.184C161.594 166.116 162.749 165.015 163.882 163.882C164.239 163.525 164.597 163.164 164.947 162.799C165.921 161.796 166.867 160.775 167.791 159.739C183.443 142.156 192 119.737 192 96C192 70.3579 182.014 46.2496 163.882 28.1179ZM167.556 158.84C166.654 159.865 165.73 160.876 164.784 161.861C163.312 163.395 161.792 164.882 160.223 166.315C159.627 166.863 159.024 167.397 158.414 167.928C157.722 168.531 157.021 169.122 156.31 169.703C150.706 174.305 144.567 178.275 138.002 181.509C135.407 182.79 132.747 183.955 130.026 184.999C119.455 189.055 107.982 191.278 96 191.278C84.4367 191.278 73.3498 189.207 63.0893 185.417C58.8776 183.865 54.8066 182.021 50.8981 179.91C50.3242 179.599 49.754 179.285 49.1874 178.964C46.2063 177.275 43.3227 175.431 40.5546 173.439C40.4644 173.374 40.3705 173.305 40.2803 173.24C38.3098 171.818 36.3934 170.321 34.542 168.747C33.8635 168.173 33.1922 167.592 32.5317 166.997C31.4563 166.04 30.4024 165.055 29.3738 164.044C27.425 162.135 25.5627 160.147 23.7835 158.079C9.41595 141.391 0.721804 119.693 0.721804 96C0.721804 43.4635 43.4635 0.721804 96 0.721804C148.537 0.721804 191.278 43.4635 191.278 96C191.278 120.058 182.317 142.058 167.556 158.84Z"
+                        fill="#3F3D56" />
+                </g>
+                <defs>
+                    <clipPath id="clip0_18_1465">
+                        <rect width="192" height="192" fill="white" />
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+        <!--options-->
+        <div id="options">
+            <button class="main-button">
+                <svg style="height:32px;" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_180_105)">
+                        <path
+                            d="M12.2107 22.2077C14.0623 26.0635 19.6785 26.201 21.451 22.2311C20.9676 21.7425 20.6072 21.2189 20.2527 20.6982C20.1941 20.6133 20.1355 20.5285 20.0769 20.4407C19.2215 21.1194 18.1814 21.5524 16.8279 21.5495C15.3689 21.5465 14.2674 20.9878 13.368 20.1657C13.3152 20.116 13.2596 20.0662 13.2068 20.0165C13.0779 20.3734 12.9139 20.8035 12.7381 21.2043C12.5682 21.5846 12.3865 21.9473 12.2107 22.2077ZM24.823 27.3829L26.1531 25.9904L28.0721 27.8334L31.0603 23.8577L32.5457 25.0542C31.8455 25.9201 29.3494 29.34 28.8045 29.7847C28.3562 30.1504 27.7117 30.1504 27.2957 29.7496L24.823 27.3829ZM28.7019 19.4256C30.7176 19.4256 32.5398 20.2418 33.8611 21.5612C35.1824 22.8806 35.9969 24.7002 35.9969 26.713C35.9969 28.7257 35.1795 30.5453 33.8611 31.8647C32.5398 33.1841 30.7176 34.0003 28.7019 34.0003C26.6863 34.0003 24.8641 33.1841 23.5428 31.8647C22.2215 30.5453 21.4041 28.7257 21.4041 26.713C21.4041 25.2561 21.8318 23.8986 22.5701 22.7606C22.3592 22.6699 22.1512 22.5646 21.9256 22.4388C21.0291 26.5872 13.948 27.5877 11.7625 22.6758C10.2185 23.451 8.65116 24.0391 6.85819 24.317L7.90116 31.8326H1.68729C-1.39474 31.5985 0.50663 27.1518 1.43534 25.926C1.88065 25.338 2.43436 24.905 3.04667 24.5627C4.88651 23.5388 9.67655 23.1994 11.6629 21.8157C11.8094 21.5963 11.9676 21.2774 12.117 20.9322C12.3455 20.4115 12.5535 19.8439 12.6853 19.4577C12.1287 18.8054 11.6541 18.0681 11.1971 17.3397L9.6912 14.9496C9.14042 14.1304 8.85331 13.3786 8.83573 12.7642C8.82694 12.4746 8.87675 12.2113 8.98222 11.9802C9.09354 11.7374 9.2664 11.5355 9.50077 11.3805C9.60917 11.3073 9.73222 11.2459 9.86698 11.1932C9.7703 9.89726 9.73222 8.26191 9.79667 6.89278C9.8289 6.56805 9.89042 6.24332 9.98124 5.9186C10.365 4.54654 11.3318 3.44071 12.5242 2.68008C13.1834 2.26174 13.9041 1.94579 14.657 1.73222C15.1346 1.59765 14.2498 0.0705484 14.7449 0.0208152C17.1355 -0.224926 21.0057 1.95456 22.6756 3.75666C23.5105 4.66064 24.035 5.85716 24.1492 7.44277L24.0555 11.3454C24.4744 11.4712 24.741 11.7374 24.8494 12.1645C24.9695 12.6384 24.8377 13.3084 24.4363 14.2182C24.4305 14.2358 24.4217 14.2504 24.41 14.2679L22.6932 17.091C22.0633 18.1266 21.4217 19.1681 20.5867 19.9873C20.6629 20.0955 20.7361 20.2037 20.8123 20.3149C21.1521 20.8122 21.4949 21.3096 21.9344 21.7543C21.949 21.7689 21.9607 21.7835 21.9725 21.8011C22.2332 21.9854 22.5467 22.1521 22.8953 22.3042C23.0945 22.0439 23.3113 21.7952 23.5428 21.5641C24.8641 20.2418 26.6893 19.4256 28.7019 19.4256ZM10.7342 11.8837C10.4002 11.8954 10.1482 11.9656 9.97538 12.0826C9.87577 12.1499 9.80546 12.2318 9.75858 12.3342C9.70585 12.4454 9.68241 12.5799 9.68827 12.7379C9.69999 13.1943 9.94023 13.794 10.406 14.4815L10.4119 14.4903L11.9178 16.8804C12.5213 17.84 13.1541 18.8171 13.9422 19.5338C14.698 20.2242 15.618 20.6923 16.8309 20.6952C18.1463 20.6982 19.1072 20.2125 19.8865 19.4841C20.698 18.7264 21.3367 17.6849 21.9695 16.6493L23.6658 13.8584C23.9822 13.1387 24.0965 12.656 24.0262 12.3722C23.9822 12.2025 23.7976 12.1206 23.4812 12.106C23.4139 12.1031 23.3435 12.1031 23.2762 12.1031C23.2 12.106 23.1209 12.1118 23.0389 12.1177C22.9949 12.1206 22.951 12.1177 22.907 12.1089C22.7547 12.1177 22.5994 12.106 22.4412 12.0826L23.0213 9.51402C18.7117 10.1927 15.4861 6.99517 10.9305 8.87334L11.2586 11.8983C11.0711 11.9158 10.8953 11.91 10.7342 11.8837ZM28.7019 20.5548C26.9998 20.5548 25.4559 21.2452 24.3396 22.3598C23.2234 23.4744 22.532 25.0132 22.532 26.7159C22.532 30.1182 25.2947 32.874 28.7019 32.874C30.4041 32.874 31.948 32.1836 33.0643 31.069C34.1805 29.9544 34.8719 28.4156 34.8719 26.713C34.8719 23.3106 32.1092 20.5548 28.7019 20.5548Z"
+                            fill="black" fill-opacity="0.8" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_180_105">
+                            <rect width="36" height="34" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+                Attendance
+            </button>
+            <button class="main-button">
+                <svg style="height: 32px;transform:translateY(3%);" viewBox="0 0 38 38" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_180_103)">
+                        <path
+                            d="M16.1619 1.2837C16.1619 0.576951 15.4716 0 14.6137 0C13.755 0 13.0647 0.57395 13.0647 1.2837V6.89941C13.0647 7.60615 13.755 8.1831 14.6137 8.1831C15.4716 8.1831 16.1619 7.60915 16.1619 6.89941V1.2837ZM12.4294 26.6328C12.426 26.5268 12.3908 26.4243 12.3285 26.339C12.2662 26.2537 12.1798 26.1895 12.0806 26.1549C12.1043 25.7415 12.1541 25.1203 12.0435 24.7226C11.9172 24.3058 11.6414 23.9518 11.2701 23.73C11.1387 23.6482 10.9963 23.5792 10.8508 23.5267C10.5829 23.4299 10.7157 22.9768 10.424 22.9708C9.74344 22.9528 8.62496 23.583 8.18855 24.0609C7.90949 24.3715 7.75141 24.7729 7.7425 25.1923L7.76996 26.2014C7.63934 26.2284 7.53172 26.3222 7.48422 26.4482C7.33875 27.0417 8.76969 28.4432 8.76969 28.594C8.76598 28.6457 8.74668 28.6945 8.71254 28.7343C7.72023 30.114 4.80121 29.3427 4.80121 32.0872H15.1161C15.1161 29.342 12.1971 30.1148 11.2041 28.7358C11.1558 28.663 11.1328 28.6232 11.1336 28.5917C11.1336 28.4574 12.4294 27.1175 12.4294 26.6328ZM9.95867 17.8645C7.21406 17.8645 4.7218 18.9929 2.91977 20.8168C1.11625 22.6354 0 25.1525 0 27.933C0 30.7105 1.11477 33.2306 2.9168 35.0515L2.96727 35.0995C4.76559 36.8911 7.23484 38 9.95867 38C12.704 38 15.1955 36.8716 16.9976 35.0515C18.8011 33.2268 19.9173 30.7082 19.9173 27.933C19.9173 25.1525 18.8011 22.6354 16.9998 20.8145L16.9486 20.7665C15.1495 18.9734 12.6788 17.8645 9.95867 17.8645ZM4.11469 22.0217C5.60574 20.5129 7.67422 19.5773 9.95867 19.5773C12.2223 19.5773 14.2737 20.4964 15.7618 21.9804L15.8027 22.0247C17.2974 23.5357 18.2237 25.6259 18.2237 27.933C18.2237 30.2408 17.2974 32.3333 15.8049 33.8428C14.3116 35.3516 12.2424 36.2879 9.95867 36.2879C7.69574 36.2879 5.64508 35.3681 4.15402 33.8848L4.11395 33.8413C2.61844 32.3295 1.69367 30.24 1.69367 27.933C1.69367 25.6259 2.61918 23.5357 4.11469 22.0217ZM33.7836 18.1773C33.8712 18.1773 33.9499 17.7872 33.9499 17.31C33.9499 16.8306 33.8801 16.4442 33.7836 16.4442H29.5576C29.4693 16.4442 29.3906 16.8344 29.3906 17.31C29.3906 17.7887 29.4604 18.1773 29.5576 18.1773H33.7836ZM27.0461 18.1773C27.1344 18.1773 27.2123 17.7872 27.2123 17.31C27.2123 16.8306 27.1433 16.4442 27.0461 16.4442H22.82C22.7325 16.4442 22.6538 16.8344 22.6538 17.31C22.6538 17.7887 22.7236 18.1773 22.82 18.1773H27.0461ZM20.3092 18.1773C20.3968 18.1773 20.4755 17.7872 20.4755 17.31C20.4755 16.8306 20.4064 16.4442 20.3092 16.4442H16.0832C15.9956 16.4442 15.917 16.8306 15.917 17.3063C16.3399 17.5727 16.7472 17.8636 17.1371 18.1773H20.3092ZM33.774 23.1471C33.8616 23.1471 33.9402 22.7569 33.9402 22.279C33.9402 21.8004 33.8712 21.4102 33.774 21.4102H29.548C29.4604 21.4102 29.3817 21.8004 29.3817 22.279C29.3817 22.7569 29.4507 23.1471 29.548 23.1471H33.774ZM27.0371 23.1471C27.1247 23.1471 27.2034 22.7569 27.2034 22.279C27.2034 21.8004 27.1344 21.4102 27.0371 21.4102H22.8111C22.7236 21.4102 22.6449 21.8004 22.6449 22.279C22.6449 22.7569 22.7139 23.1471 22.8111 23.1471H27.0371ZM33.7651 28.1198C33.8527 28.1198 33.9313 27.7297 33.9313 27.251C33.9313 26.7731 33.8616 26.3829 33.7651 26.3829H29.5391C29.4507 26.3829 29.3721 26.7731 29.3721 27.251C29.3721 27.7297 29.4418 28.1198 29.5391 28.1198H33.7651ZM27.0275 28.1198C27.1158 28.1198 27.1945 27.7297 27.1945 27.251C27.1945 26.7731 27.1247 26.3829 27.0275 26.3829H22.8015C22.7139 26.3829 22.6352 26.7731 22.6352 27.251C22.6352 27.7297 22.705 28.1198 22.8015 28.1198H27.0275ZM30.0712 1.2837C30.0712 0.576951 29.3817 0 28.523 0C27.6643 0 26.9748 0.57395 26.9748 1.2837V6.89941C26.9748 7.60615 27.6665 8.1831 28.523 8.1831C29.3817 8.1831 30.0712 7.60915 30.0712 6.89941V1.2837ZM36.2945 12.2773H6.80066V5.81153C6.80066 5.59095 6.88824 5.39663 7.02926 5.25408C7.17027 5.11153 7.37141 5.023 7.58145 5.023H10.4092C10.8834 5.023 11.2679 4.63287 11.2679 4.15495C11.2679 3.67628 10.8834 3.28615 10.4092 3.28615H7.58145C6.88824 3.28615 6.26777 3.56899 5.81355 4.02815C5.35859 4.48806 5.07953 5.11528 5.07953 5.81528V16.0796C5.6436 15.883 6.22399 15.7247 6.81996 15.6077V14.0036H6.80066H36.2945V30.7472C36.2945 30.9678 36.2061 31.1614 36.0659 31.3039C35.9248 31.4465 35.7237 31.5357 35.5144 31.5357H21.4967C21.3379 32.1367 21.1368 32.7234 20.8948 33.2876H35.4981C36.1883 33.2876 36.8118 33.0063 37.266 32.5456C37.7217 32.0902 38 31.463 38 30.7622V5.81828C38 5.12129 37.7217 4.49032 37.266 4.03116C36.8118 3.57125 36.1913 3.2899 35.4981 3.2899H32.4796C32.0061 3.2899 31.6202 3.68003 31.6202 4.1572C31.6202 4.63662 32.0061 5.02675 32.4796 5.02675H35.4981C35.7178 5.02675 35.9093 5.11528 36.0503 5.25783C36.1913 5.40038 36.2796 5.6022 36.2796 5.81528V12.2795H36.2945V12.2773ZM24.4981 5.023C24.9709 5.023 25.3568 4.63287 25.3568 4.15495C25.3568 3.67628 24.9709 3.28615 24.4981 3.28615H18.7425C18.2682 3.28615 17.8823 3.67628 17.8823 4.15495C17.8823 4.63287 18.2682 5.023 18.7425 5.023H24.4981Z"
+                            fill="black" fill-opacity="0.7" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_180_103">
+                            <rect width="38" height="38" fill="white" transform="matrix(-1 0 0 1 38 0)" />
+                        </clipPath>
+                    </defs>
+                </svg>
+                Timetable
+            </button>
+
+            <button class="main-button">
+                <svg style="margin-left:5px;transform:translateY(-2%);" viewBox="0 0 36 35" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 6.73914V21.087" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M4.98169 34C6.4173 31.7981 8.37957 29.9891 10.6907 28.7369C13.0019 27.4848 15.589 26.829 18.2176 26.829C20.8461 26.829 23.4332 27.4848 25.7444 28.7369C28.0555 29.9891 30.0178 31.7981 31.4534 34"
+                        stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M35.4348 6.73913L18.2174 12.4783L1 6.73913L18.2174 1L35.4348 6.73913Z" stroke="black"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M25.6246 10.0032C26.9408 11.4405 27.8103 13.2296 28.1273 15.1525C28.4443 17.0754 28.195 19.0489 27.4098 20.8326C26.6246 22.6162 25.3375 24.1329 23.7053 25.1977C22.0731 26.2626 20.1664 26.8295 18.2176 26.8295C16.2687 26.8295 14.362 26.2626 12.7298 25.1977C11.0976 24.1329 9.81049 22.6162 9.02531 20.8326C8.24014 19.0489 7.99084 17.0754 8.30782 15.1525C8.6248 13.2296 9.49436 11.4405 10.8105 10.0032"
+                        stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                Student
+            </button>
+            <button class="main-button">
+                <svg style="margin-left: 5px;transform:translateY(2%);" viewBox="0 0 35 35" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_50_214)">
+                        <path d="M28 4.90002V11.2L21.7 11.1993" stroke="black" stroke-miterlimit="10"
+                            stroke-linecap="round" />
+                        <path
+                            d="M5.59937 17.5C5.59937 10.927 10.9264 5.59998 17.4994 5.59998C21.0071 5.59998 24.1606 7.11688 26.3383 9.53118C26.7709 10.0114 27.1657 10.5273 27.5164 11.0733"
+                            stroke="black" stroke-miterlimit="10" stroke-linecap="round" />
+                        <path d="M7 30.1V23.8L13.3 23.8007" stroke="black" stroke-miterlimit="10"
+                            stroke-linecap="round" />
+                        <path
+                            d="M29.4006 17.5C29.4006 24.073 24.0736 29.4 17.5006 29.4C13.9929 29.4 10.8394 27.8824 8.66174 25.4688C8.22914 24.9879 7.83434 24.4727 7.48364 23.9267"
+                            stroke="black" stroke-miterlimit="10" stroke-linecap="round" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_50_214">
+                            <rect width="35" height="35" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+                Update Info
+            </button>
+        </div>
+    </section>
+    <section id="right-sec" class="row g-0">
+        <p class="main-title g-0">Add Attendance</p>
+        <div class="form-group col-lg-3 col-md-5 col-sm-12">
+            <label for="date" style="font-weight: 700;">Date :</lebel>
+                <div class='input-group date' style="margin-bottom:0;margin-top: 8px;">
+                    <input type='date' class="form-control" id='date' required name="date" />
+                </div>
+        </div>
+        <div class="form-group col-lg-3 col-md-5 col-sm-12">
+            <label for="period" class="form-label" style="font-weight: 700;width: 70%">Period :</label>
+            <select class="form-select form-control" id="period" name="period">
+                <option>Select</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+            </select>
+        </div>
+        <div class="form-group col-lg-3 col-md-4 col-sm-12"><button class="btn btn-outline-success" id="attendance_search" onclick="attendance_search()">Search Now</button></div>
+        <div id="period-details" class="col-12 row g-0 period">
+            <div class="col-3 period-no">
+                <p class="period-title">
+                    <span id="this-period">#1</span> 
+                </p>
+                <p style="margin-top: 5px;font-weight: 100;"><span id="this-period-time"></span></p>
+            </div>
+            <div class="col-9 period-info">
+               <p style="font-weight: 600;">Day : <span id="this-day" style="font-weight: 400;"></span></p> 
+               <p style="font-weight: 600;">Branch : <span id="this-branch" style="font-weight: 400;">Computer Engineering</span></p>
+               <p style="font-weight: 600;">Sem : <span id="this-sem" style="font-weight: 400;">3</span></p>
+               <p style="font-weight: 600;">Subject : <span id="this-sub" style="font-weight: 400;">Data Structure</span></p>
+               <p style="font-weight: 600;">Type : <span id="this-type" style="font-weight: 400;">Lab</span></p>
+            </div>
+        </div>
+        <div class="col-12 table-container g-0">
+            <table id="example" class="table table-bordered table-hover" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
+                    </tr>
+                <tbody>
+                    <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>61</td>
+                        <td>2011-04-25</td>
+                        <td>$320,800</td>
+                    </tr>
+                    <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>63</td>
+                        <td>2011-07-25</td>
+                        <td>$170,750</td>
+                    </tr>
+                    <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>66</td>
+                        <td>2009-01-12</td>
+                        <td>$86,000</td>
+                    </tr>
+                    <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>22</td>
+                        <td>2012-03-29</td>
+                        <td>$433,060</td>
+                    </tr>
+                    <tr>
+                        <td>Airi Satou</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>33</td>
+                        <td>2008-11-28</td>
+                        <td>$162,700</td>
+                    </tr>
+                    <tr>
+                        <td>Brielle Williamson</td>
+                        <td>Integration Specialist</td>
+                        <td>New York</td>
+                        <td>61</td>
+                        <td>2012-12-02</td>
+                        <td>$372,000</td>
+                    </tr>
+                    <tr>
+                        <td>Herrod Chandler</td>
+                        <td>Sales Assistant</td>
+                        <td>San Francisco</td>
+                        <td>59</td>
+                        <td>2012-08-06</td>
+                        <td>$137,500</td>
+                    </tr>
+                    <tr>
+                        <td>Rhona Davidson</td>
+                        <td>Integration Specialist</td>
+                        <td>Tokyo</td>
+                        <td>55</td>
+                        <td>2010-10-14</td>
+                        <td>$327,900</td>
+                    </tr>
+                    <tr>
+                        <td>Colleen Hurst</td>
+                        <td>Javascript Developer</td>
+                        <td>San Francisco</td>
+                        <td>39</td>
+                        <td>2009-09-15</td>
+                        <td>$205,500</td>
+                    </tr>
+                    <tr>
+                        <td>Sonya Frost</td>
+                        <td>Software Engineer</td>
+                        <td>Edinburgh</td>
+                        <td>23</td>
+                        <td>2008-12-13</td>
+                        <td>$103,600</td>
+                    </tr>
+                    <tr>
+                        <td>Jena Gaines</td>
+                        <td>Office Manager</td>
+                        <td>London</td>
+                        <td>30</td>
+                        <td>2008-12-19</td>
+                        <td>$90,560</td>
+                    </tr>
+                    <tr>
+                        <td>Quinn Flynn</td>
+                        <td>Support Lead</td>
+                        <td>Edinburgh</td>
+                        <td>22</td>
+                        <td>2013-03-03</td>
+                        <td>$342,000</td>
+                    </tr>
+                    <tr>
+                        <td>Charde Marshall</td>
+                        <td>Regional Director</td>
+                        <td>San Francisco</td>
+                        <td>36</td>
+                        <td>2008-10-16</td>
+                        <td>$470,600</td>
+                    </tr>
+                    <tr>
+                        <td>Haley Kennedy</td>
+                        <td>Senior Marketing Designer</td>
+                        <td>London</td>
+                        <td>43</td>
+                        <td>2012-12-18</td>
+                        <td>$313,500</td>
+                    </tr>
+                    <tr>
+                        <td>Tatyana Fitzpatrick</td>
+                        <td>Regional Director</td>
+                        <td>London</td>
+                        <td>19</td>
+                        <td>2010-03-17</td>
+                        <td>$385,750</td>
+                    </tr>
+                    <tr>
+                        <td>Michael Silva</td>
+                        <td>Marketing Designer</td>
+                        <td>London</td>
+                        <td>66</td>
+                        <td>2012-11-27</td>
+                        <td>$198,500</td>
+                    </tr>
+                    <tr>
+                        <td>Paul Byrd</td>
+                        <td>Chief Financial Officer (CFO)</td>
+                        <td>New York</td>
+                        <td>64</td>
+                        <td>2010-06-09</td>
+                        <td>$725,000</td>
+                    </tr>
+                    <tr>
+                        <td>Gloria Little</td>
+                        <td>Systems Administrator</td>
+                        <td>New York</td>
+                        <td>59</td>
+                        <td>2009-04-10</td>
+                        <td>$237,500</td>
+                    </tr>
+                    <tr>
+                        <td>Bradley Greer</td>
+                        <td>Software Engineer</td>
+                        <td>London</td>
+                        <td>41</td>
+                        <td>2012-10-13</td>
+                        <td>$132,000</td>
+                    </tr>
+                    <tr>
+                        <td>Dai Rios</td>
+                        <td>Personnel Lead</td>
+                        <td>Edinburgh</td>
+                        <td>35</td>
+                        <td>2012-09-26</td>
+                        <td>$217,500</td>
+                    </tr>
+                    <tr>
+                        <td>Jenette Caldwell</td>
+                        <td>Development Lead</td>
+                        <td>New York</td>
+                        <td>30</td>
+                        <td>2011-09-03</td>
+                        <td>$345,000</td>
+                    </tr>
+                    <tr>
+                        <td>Yuri Berry</td>
+                        <td>Chief Marketing Officer (CMO)</td>
+                        <td>New York</td>
+                        <td>40</td>
+                        <td>2009-06-25</td>
+                        <td>$675,000</td>
+                    </tr>
+                    <tr>
+                        <td>Caesar Vance</td>
+                        <td>Pre-Sales Support</td>
+                        <td>New York</td>
+                        <td>21</td>
+                        <td>2011-12-12</td>
+                        <td>$106,450</td>
+                    </tr>
+                    <tr>
+                        <td>Doris Wilder</td>
+                        <td>Sales Assistant</td>
+                        <td>Sydney</td>
+                        <td>23</td>
+                        <td>2010-09-20</td>
+                        <td>$85,600</td>
+                    </tr>
+                    <tr>
+                        <td>Angelica Ramos</td>
+                        <td>Chief Executive Officer (CEO)</td>
+                        <td>London</td>
+                        <td>47</td>
+                        <td>2009-10-09</td>
+                        <td>$1,200,000</td>
+                    </tr>
+                    <tr>
+                        <td>Gavin Joyce</td>
+                        <td>Developer</td>
+                        <td>Edinburgh</td>
+                        <td>42</td>
+                        <td>2010-12-22</td>
+                        <td>$92,575</td>
+                    </tr>
+                    <tr>
+                        <td>Jennifer Chang</td>
+                        <td>Regional Director</td>
+                        <td>Singapore</td>
+                        <td>28</td>
+                        <td>2010-11-14</td>
+                        <td>$357,650</td>
+                    </tr>
+                    <tr>
+                        <td>Brenden Wagner</td>
+                        <td>Software Engineer</td>
+                        <td>San Francisco</td>
+                        <td>28</td>
+                        <td>2011-06-07</td>
+                        <td>$206,850</td>
+                    </tr>
+                    <tr>
+                        <td>Fiona Green</td>
+                        <td>Chief Operating Officer (COO)</td>
+                        <td>San Francisco</td>
+                        <td>48</td>
+                        <td>2010-03-11</td>
+                        <td>$850,000</td>
+                    </tr>
+                    <tr>
+                        <td>Shou Itou</td>
+                        <td>Regional Marketing</td>
+                        <td>Tokyo</td>
+                        <td>20</td>
+                        <td>2011-08-14</td>
+                        <td>$163,000</td>
+                    </tr>
+                    <tr>
+                        <td>Michelle House</td>
+                        <td>Integration Specialist</td>
+                        <td>Sydney</td>
+                        <td>37</td>
+                        <td>2011-06-02</td>
+                        <td>$95,400</td>
+                    </tr>
+                    <tr>
+                        <td>Suki Burks</td>
+                        <td>Developer</td>
+                        <td>London</td>
+                        <td>53</td>
+                        <td>2009-10-22</td>
+                        <td>$114,500</td>
+                    </tr>
+                    <tr>
+                        <td>Prescott Bartlett</td>
+                        <td>Technical Author</td>
+                        <td>London</td>
+                        <td>27</td>
+                        <td>2011-05-07</td>
+                        <td>$145,000</td>
+                    </tr>
+                    <tr>
+                        <td>Gavin Cortez</td>
+                        <td>Team Leader</td>
+                        <td>San Francisco</td>
+                        <td>22</td>
+                        <td>2008-10-26</td>
+                        <td>$235,500</td>
+                    </tr>
+                    <tr>
+                        <td>Martena Mccray</td>
+                        <td>Post-Sales support</td>
+                        <td>Edinburgh</td>
+                        <td>46</td>
+                        <td>2011-03-09</td>
+                        <td>$324,050</td>
+                    </tr>
+                    <tr>
+                        <td>Unity Butler</td>
+                        <td>Marketing Designer</td>
+                        <td>San Francisco</td>
+                        <td>47</td>
+                        <td>2009-12-09</td>
+                        <td>$85,675</td>
+                    </tr>
+                    <tr>
+                        <td>Howard Hatfield</td>
+                        <td>Office Manager</td>
+                        <td>San Francisco</td>
+                        <td>51</td>
+                        <td>2008-12-16</td>
+                        <td>$164,500</td>
+                    </tr>
+                    <tr>
+                        <td>Hope Fuentes</td>
+                        <td>Secretary</td>
+                        <td>San Francisco</td>
+                        <td>41</td>
+                        <td>2010-02-12</td>
+                        <td>$109,850</td>
+                    </tr>
+                    <tr>
+                        <td>Vivian Harrell</td>
+                        <td>Financial Controller</td>
+                        <td>San Francisco</td>
+                        <td>62</td>
+                        <td>2009-02-14</td>
+                        <td>$452,500</td>
+                    </tr>
+                    <tr>
+                        <td>Timothy Mooney</td>
+                        <td>Office Manager</td>
+                        <td>London</td>
+                        <td>37</td>
+                        <td>2008-12-11</td>
+                        <td>$136,200</td>
+                    </tr>
+                    <tr>
+                        <td>Jackson Bradshaw</td>
+                        <td>Director</td>
+                        <td>New York</td>
+                        <td>65</td>
+                        <td>2008-09-26</td>
+                        <td>$645,750</td>
+                    </tr>
+                    <tr>
+                        <td>Olivia Liang</td>
+                        <td>Support Engineer</td>
+                        <td>Singapore</td>
+                        <td>64</td>
+                        <td>2011-02-03</td>
+                        <td>$234,500</td>
+                    </tr>
+                    <tr>
+                        <td>Bruno Nash</td>
+                        <td>Software Engineer</td>
+                        <td>London</td>
+                        <td>38</td>
+                        <td>2011-05-03</td>
+                        <td>$163,500</td>
+                    </tr>
+                    <tr>
+                        <td>Sakura Yamamoto</td>
+                        <td>Support Engineer</td>
+                        <td>Tokyo</td>
+                        <td>37</td>
+                        <td>2009-08-19</td>
+                        <td>$139,575</td>
+                    </tr>
+                    <tr>
+                        <td>Thor Walton</td>
+                        <td>Developer</td>
+                        <td>New York</td>
+                        <td>61</td>
+                        <td>2013-08-11</td>
+                        <td>$98,540</td>
+                    </tr>
+                    <tr>
+                        <td>Finn Camacho</td>
+                        <td>Support Engineer</td>
+                        <td>San Francisco</td>
+                        <td>47</td>
+                        <td>2009-07-07</td>
+                        <td>$87,500</td>
+                    </tr>
+                    <tr>
+                        <td>Serge Baldwin</td>
+                        <td>Data Coordinator</td>
+                        <td>Singapore</td>
+                        <td>64</td>
+                        <td>2012-04-09</td>
+                        <td>$138,575</td>
+                    </tr>
+                    <tr>
+                        <td>Zenaida Frank</td>
+                        <td>Software Engineer</td>
+                        <td>New York</td>
+                        <td>63</td>
+                        <td>2010-01-04</td>
+                        <td>$125,250</td>
+                    </tr>
+                    <tr>
+                        <td>Zorita Serrano</td>
+                        <td>Software Engineer</td>
+                        <td>San Francisco</td>
+                        <td>56</td>
+                        <td>2012-06-01</td>
+                        <td>$115,000</td>
+                    </tr>
+                    <tr>
+                        <td>Jennifer Acosta</td>
+                        <td>Junior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>43</td>
+                        <td>2013-02-01</td>
+                        <td>$75,650</td>
+                    </tr>
+                    <tr>
+                        <td>Cara Stevens</td>
+                        <td>Sales Assistant</td>
+                        <td>New York</td>
+                        <td>46</td>
+                        <td>2011-12-06</td>
+                        <td>$145,600</td>
+                    </tr>
+                    <tr>
+                        <td>Hermione Butler</td>
+                        <td>Regional Director</td>
+                        <td>London</td>
+                        <td>47</td>
+                        <td>2011-03-21</td>
+                        <td>$356,250</td>
+                    </tr>
+                    <tr>
+                        <td>Lael Greer</td>
+                        <td>Systems Administrator</td>
+                        <td>London</td>
+                        <td>21</td>
+                        <td>2009-02-27</td>
+                        <td>$103,500</td>
+                    </tr>
+                    <tr>
+                        <td>Jonas Alexander</td>
+                        <td>Developer</td>
+                        <td>San Francisco</td>
+                        <td>30</td>
+                        <td>2010-07-14</td>
+                        <td>$86,500</td>
+                    </tr>
+                    <tr>
+                        <td>Shad Decker</td>
+                        <td>Regional Director</td>
+                        <td>Edinburgh</td>
+                        <td>51</td>
+                        <td>2008-11-13</td>
+                        <td>$183,000</td>
+                    </tr>
+                    <tr>
+                        <td>Michael Bruce</td>
+                        <td>Javascript Developer</td>
+                        <td>Singapore</td>
+                        <td>29</td>
+                        <td>2011-06-27</td>
+                        <td>$183,000</td>
+                    </tr>
+                    <tr>
+                        <td>Donna Snider</td>
+                        <td>Customer Support</td>
+                        <td>New York</td>
+                        <td>27</td>
+                        <td>2011-01-25</td>
+                        <td>$112,000</td>
+                    </tr>
+                </tbody>
+                </thead>
+            </table>
+        </div>
+
+        <p class="main-title g-0" style="margin-top: 30px;">Timetable</p>
+
+        <div id="timetable" class="col-12">
+            
+            <div id="days">
+                <button class="btn btn-outline-success btn-color-change">Monday</button>
+                <button class="btn btn-outline-success">Tuesday</button>
+                <button class="btn btn-outline-success">Wednesday</button>
+                <button class="btn btn-outline-success">Thursday</button>
+                <button class="btn btn-outline-success">Friday</button>
+                <button class="btn btn-outline-success">Saturday</button>
+            </div>
+            <div id="period-1" class="col-12 row g-0 period">
+                <div class="col-3 period-no">
+                    <p class="period-title">
+                        #1
+                    </p>
+                    <p style="margin-top: 5px;font-weight: 100;">10:30AM - 11:30AM</p>
+                </div>
+                <div class="col-9 period-info">
+                   <p style="font-weight: 600;">Branch : <span id="branch-1" style="font-weight: 400;">Computer Engineering</span></p>
+                   <p style="font-weight: 600;">Sem : <span id="sem-1" style="font-weight: 400;">3</span></p>
+                   <p style="font-weight: 600;">Subject : <span id="subject-1" style="font-weight: 400;">Data Structure</span></p>
+                   <p style="font-weight: 600;">Type : <span id="type-1" style="font-weight: 400;">Lab</span></p>
+                </div>
+            </div>
+            <div id="period-2" class="col-12 row g-0 period">
+                <div class="col-3 period-no">
+                    <p class="period-title">
+                        #2
+                    </p>
+                    <p style="margin-top: 5px;font-weight: 100;">11:30AM - 12:30PM</p>
+                </div>
+                <div class="col-9 period-info">
+                   <p style="font-weight: 600;">Branch : <span id="branch-2" style="font-weight: 400;">Computer Engineering</span></p>
+                   <p style="font-weight: 600;">Sem : <span id="sem-2" style="font-weight: 400;">3</span></p>
+                   <p style="font-weight: 600;">Subject : <span id="subject-2" style="font-weight: 400;">Data Structure</span></p>
+                   <p style="font-weight: 600;">Type : <span id="type-2" style="font-weight: 400;">Lab</span></p>
+                </div>
+            </div>
+            <div id="period-3" class="col-12 row g-0 period">
+                <div class="col-3 period-no">
+                    <p class="period-title">
+                        #3
+                    </p>
+                    <p style="margin-top: 5px;font-weight: 100;">1:00PM - 2:00PM</p>
+                </div>
+                <div class="col-9 period-info">
+                   <p style="font-weight: 600;">Branch : <span id="branch-3" style="font-weight: 400;">Computer Engineering</span></p>
+                   <p style="font-weight: 600;">Sem : <span id="sem-3" style="font-weight: 400;">3</span></p>
+                   <p style="font-weight: 600;">Subject : <span id="subject-3" style="font-weight: 400;">Data Structure</span></p>
+                   <p style="font-weight: 600;">Type : <span id="type-3" style="font-weight: 400;">Lab</span></p>
+                </div>
+            </div>
+            <div id="period-4" class="col-12 row g-0 period">
+                <div class="col-3 period-no">
+                    <p class="period-title">
+                        #4
+                    </p>
+                    <p style="margin-top: 5px;font-weight: 100;">2:00PM - 3:00PM</p>
+                </div>
+                <div class="col-9 period-info">
+                   <p style="font-weight: 600;">Branch : <span id="branch-4" style="font-weight: 400;">Computer Engineering</span></p>
+                   <p style="font-weight: 600;">Sem : <span id="sem-4" style="font-weight: 400;">3</span></p>
+                   <p style="font-weight: 600;">Subject : <span id="subject-4" style="font-weight: 400;">Data Structure</span></p>
+                   <p style="font-weight: 600;">Type : <span id="type-4" style="font-weight: 400;">Lab</span></p>
+                </div>
+            </div>
+            <div id="period-5" class="col-12 row g-0 period">
+                <div class="col-3 period-no">
+                    <p class="period-title">
+                        #5
+                    </p>
+                    <p style="margin-top: 5px;font-weight: 100;">3:15PM - 4:15PM</p>
+                </div>
+                <div class="col-9 period-info">
+                   <p style="font-weight: 600;">Branch : <span id="branch-5" style="font-weight: 400;">Computer Engineering</span></p>
+                   <p style="font-weight: 600;">Sem : <span id="sem-5" style="font-weight: 400;">3</span></p>
+                   <p style="font-weight: 600;">Subject : <span id="subject-5" style="font-weight: 400;">Data Structure</span></p>
+                   <p style="font-weight: 600;">Type : <span id="type-5" style="font-weight: 400;">Lab</span></p>
+                </div>
+            </div>
+            <div id="period-6" class="col-12 row g-0 period">
+                <div class="col-3 period-no">
+                    <p class="period-title">
+                        #6
+                    </p>
+                    <p style="margin-top: 5px;font-weight: 100;">4:15AM - 5:15AM</p>
+                </div>
+                <div class="col-9 period-info">
+                   <p style="font-weight: 600;">Branch : <span id="branch-6" style="font-weight: 400;">Computer Engineering</span></p>
+                   <p style="font-weight: 600;">Sem : <span id="sem-6" style="font-weight: 400;">3</span></p>
+                   <p style="font-weight: 600;">Subject : <span id="subject-6" style="font-weight: 400;">Data Structure</span></p>
+                   <p style="font-weight: 600;">Type : <span id="type-6" style="font-weight: 400;">Lab</span></p>
+                </div>
+            </div>
+            
+        </div>
+
+
+        
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        new DataTable('#example');
+        new DataTable('#example2');
+       
+    </script>
+</body>
+
+</html>
