@@ -39,20 +39,22 @@ pool.connect(function (err) {
 });
 //admin
 const Auth1 = (req, res, next) => {
-    if (req.session.userid && req.session.role=='Admin') {
+    if (req.session.userid && req.session.role == 'Admin') {
         next(); // User is authenticated, continue to next middleware
     } else {
         res.redirect('/503'); // User is not authenticated, redirect to login page
     }
 }
 const Auth2 = (req, res, next) => {
-    if (req.session.userid && req.session.role=='Teacher') {
+    if (req.session.userid && req.session.role == 'Teacher') {
         next(); // User is authenticated, continue to next middleware
     } else {
         res.redirect('/503'); // User is not authenticated, redirect to login page
     }
 }
- 
+function checkdate(date , period, id){
+    
+}
 
 //REDIRECT
 app.get("/", (req, res) => {
@@ -98,10 +100,10 @@ app.post('/login', (req, res) => {
                     req.session.email = email;
                     req.session.pass = pass;
                     req.session.role = role;
-                    if(role=='Admin')
-                    res.redirect('/admin/student');
+                    if (role == 'Admin')
+                        res.redirect('/admin/student');
                     else
-                    res.redirect('/teacher');
+                        res.redirect('/teacher');
                 }
                 else {
                     res.redirect('/503');
@@ -109,6 +111,74 @@ app.post('/login', (req, res) => {
             }
             else {
                 res.redirect('/503');
+            }
+        }
+    );
+});
+
+//teacher
+app.post("/getstudents", Auth2, (req, res) => {
+    const { sem, branch, batch } = req.body;
+    var condition = `(batch='` + batch[0] + `'`, i = 1;
+    for (i = 1; i < (2); i++) {
+        condition += ` OR batch='` + batch[i] + `'`;
+    }
+    condition += `)`;
+    pool.query(
+        `SELECT name,enrollment,batch FROM student where sem=(?) AND branch=(?) AND` + condition,
+        [sem, branch],
+        (error, results) => {
+            if (error) {
+                console.log(error)
+                res.redirect('/500');
+            }
+            else if (results && results[0]) {
+                res.status(200).json(results);
+            }
+            else {
+                res.redirect('/503');
+            }
+        }
+    );
+});
+app.post("/add/attendance", Auth2, (req, res) => {
+    const { submit_attendance } = req.body;
+    
+    pool.query(
+        "SELECT * FROM attendance where date=(?) AND periodno=(?) AND teacher_id=(?)",
+        [submit_attendance[0].date, submit_attendance[0].periodno, submit_attendance[0].teacher_id],
+        (error, results) => {
+            if (error) {
+                console.log(error)
+                res.redirect('/500');
+            }
+            else if (results && results[0]) {
+                res.status(200).json("Attendance is already there");
+            }
+            else {
+                var val=-1;
+                for (i = 0; i < (submit_attendance.length); i++) {
+                    if(submit_attendance[i].attendance=='true'){
+                        val=1;
+                    }
+                    else if(submit_attendance[i].attendance=='false'){
+                        val=0;
+                    }
+                    pool.query(
+                        `insert into attendance(attendance,date,enrollment,periodno,subject,teacher_id,type) 
+                        values(? , ?, ?, ?, ?, ?, ?);`,
+                        [val, submit_attendance[i].date,submit_attendance[i].enrollment,
+                        submit_attendance[i].periodno,submit_attendance[i].subject,submit_attendance[i].teacher_id,
+                        submit_attendance[i].type],
+                        (error, results) => {
+                            if (error) {
+                                console.log(error)
+                                res.redirect('/500');
+                            }
+                        }
+                    );
+                }
+                res.status(200).json("successful");
             }
         }
     );

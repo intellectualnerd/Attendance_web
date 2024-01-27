@@ -131,7 +131,7 @@ select:focus{
     left: 0px;
     border-radius: 10px;
 }
-#example{
+#attendance_table{
     margin: 20px 0 !important;
 }
 .paginate_button.active .page-link{
@@ -151,6 +151,9 @@ select:focus{
     margin: 20px 0px;
     border: 2px solid var(--attend-secondary);
     border-radius: 10px;
+}
+.period-info>p{
+    margin-bottom: 0.8rem;
 }
 .period-no{
     border-right: 2px solid var(--attend-secondary) !important;
@@ -212,7 +215,9 @@ select:focus{
     #date{
         margin-bottom: 10px;
     }
-    
+    #period{
+        width:60%;
+    }
 }
 
 @media screen and (max-width:576px) {
